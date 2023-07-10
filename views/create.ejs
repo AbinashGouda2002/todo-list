@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+            <div class="create-task content">
+                <form action="/create" method="POST">
+                    <label for="title">Task title:</label>
+                    <input type="text" id="title" name="title" required>
+                    <label for="details">Task details:</label>
+                    <input type="text" id="details" name="details" required>
+                    <label for="body">Task body:</label>
+                    <input type="text" id="body" name="body" required>
+                    <button class="btn" type="submit">Submit</button>
+                </form>
+                <!-- including footer -->
+                <%- include('./partials/footer.ejs') %>
+            </div>
+    </body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+ <title><%= title %></title>
+</head>
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+      <div class="details content">
+        <h2><%= task.title %></h2>
+        <div class="content">
+            <p><%= task.body %></p>
+        </div>
+        <div class="bio">
+          <p><%= task.details %></p>
+        </div>
+        <a class="delete" data-doc="<%= task._id %>">Delete</a>
+      </div>
+    <%- include('./partials/footer.ejs') %>
+    </div>
+    <script>
+      const idToDelete = document.querySelector('a.delete');
+      idToDelete.addEventListener('click', (e) => {
+        const endpoint = `/tasks/${idToDelete.dataset.doc}`;
+        fetch(endpoint, {
+          method: 'DELETE'
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          window.location.href = data.redirect
+        })
+        .catch(err => {
+          console.log(err);
+        })
+      })
+    </script>
+</body>
+</html>

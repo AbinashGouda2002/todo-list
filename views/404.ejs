@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- using custom head -->
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List | <%= title %></title>  
+</head> -->
+<!-- including head -->
+<%- include('./partials/head.ejs') %>
+<body>
+    <!-- using custom navbar -->
+    <!-- <nav>
+        <div class="site-title">
+            <a href="/">To Do List</a>
+            <p>Save Your Tasks Easily</p>
+        </div>
+        <ul>
+            <li><a href="/">Tasks</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/tasks/create">New Task</a></li>
+        </ul>
+    </nav> -->
+    <!-- including navbar -->
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="not-found content">
+        <h2>OOPS!, page not found :(</h2>
+    </div>
+    <!-- including footer -->
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
